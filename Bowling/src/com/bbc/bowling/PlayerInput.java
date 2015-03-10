@@ -12,7 +12,7 @@ public class PlayerInput {
 		
 		Scanner userInput = new Scanner(System.in);
 		
-		//initialise an hashmap that will contain player names
+		//initialise a hashmap that will contain player names
 		HashMap<Integer, Player> players = new HashMap<Integer, Player>();
 		
 		//initialise an array of frames
@@ -72,7 +72,7 @@ public class PlayerInput {
 			temp = players.get(key);
 			String playerName = temp.getName();
 			
-					
+		    //asks the player to enter the score for their first throw in frame 1
 			System.out.println(playerName + " frame 1 first bowl score:");
 			
 			while(true){
@@ -96,6 +96,7 @@ public class PlayerInput {
 			g.add(firstBowl);
 			currentFrameThrows.add(firstBowl);		
 			
+			//if the first throw is not a strike then the program asks the user to enter the score for the second throw
 			if (firstBowl != 10){
 			   System.out.println(playerName + " frame 1 second bowl score:"); 
 			   
@@ -210,6 +211,7 @@ public class PlayerInput {
 				String playerName = temp.getName();
 				frameThrows = temp.getFrameThrows();
 				
+				//asks the player to enter the first throw score for frame i
 				System.out.println(playerName + " frame " + i + " first bowl score:"); 
 				
 				while(true){
@@ -237,6 +239,7 @@ public class PlayerInput {
 				g.add(firstBowl);
 				currentFrameThrows.add(firstBowl);
 				
+				//if the player didn't score a strike, the program asks for the score for the second throw in frame i
 				if (firstBowl != 10){
 				   System.out.println(playerName + " frame " + i + " second bowl score:"); 
 				   
@@ -295,6 +298,7 @@ public class PlayerInput {
 				
 				String playerName = currentPlayer.getName();
 				
+				//prints the player's name in capital letters
 				System.out.println(" ");
 				System.out.println(playerName.toUpperCase());
 				
@@ -371,7 +375,8 @@ public class PlayerInput {
 			String playerName = temp.getName();
 			frameThrows = temp.getFrameThrows();
 			
-			System.out.println(playerName + " frame 10 first bowl score:");  //add int check and 1-10 check
+			//the program asks for the player's frame 10 first throw score
+			System.out.println(playerName + " frame 10 first bowl score:");  
 			
 			while(true){
 				//if the user enters a non-integer value an error message appears
@@ -397,6 +402,7 @@ public class PlayerInput {
 			g.add(firstBowl);
 			frame10Throws.add(firstBowl);
 			
+			//if the player didn't score a strike, the program asks for the frame 10 second throw score
 			if (firstBowl != 10){
 			   System.out.println(playerName + " frame 10 second bowl score:"); //add strike check
 			   
@@ -596,7 +602,7 @@ public class PlayerInput {
         int maxScore = 0;
         String winner;
         
-        //find the highest score
+        //finds the highest score
         for(int key : players.keySet()){
         	
         	Player playerWin = new Player();
@@ -609,7 +615,7 @@ public class PlayerInput {
         	
         }
         
-        //prints the winner(s) of the bowling game
+        //prints the winner(s) of the bowling game by printing out the name of every player with the maxScore
         System.out.println(" ");
         System.out.println("WINNER: ");
         
